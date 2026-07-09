@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/searchFragment">
+
+    <!-- Search Fragment - Entry point for city search -->
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.weatherforecastapp.presentation.ui.search.SearchFragment"
+        android:label="@string/search"
+        tools:layout="@layout/fragment_search">
+
+        <!-- Optional argument: city name passed from Favorites -->
+        <argument
+            android:name="cityName"
+            app:argType="string"
+            android:defaultValue="" />
+
+        <!-- Navigate to detail with weather data -->
+        <action
+            android:id="@+id/action_search_to_detail"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+
+        <!-- Navigate to favorites -->
+        <action
+            android:id="@+id/action_search_to_favorites"
+            app:destination="@id/favoritesFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <!-- Detail Fragment - Shows detailed weather for a day -->
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.weatherforecastapp.presentation.ui.detail.DetailFragment"
+        android:label="@string/detail"
+        tools:layout="@layout/fragment_detail">
+
+        <!-- SafeArgs arguments -->
+        <argument
+            android:name="date"
+            app:argType="string" />
+        <argument
+            android:name="temp"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+    </fragment>
+
+    <!-- Favorites Fragment - Shows saved cities from Room -->
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.weatherforecastapp.presentation.ui.favorites.FavoritesFragment"
+        android:label="@string/favorites"
+        tools:layout="@layout/fragment_favorites">
+
+        <!-- Navigate to search with city name -->
+        <action
+            android:id="@+id/action_favorites_to_search"
+            app:destination="@id/searchFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+</navigation>

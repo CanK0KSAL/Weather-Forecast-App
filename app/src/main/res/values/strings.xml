@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Weather Forecast</string>
+
+    <!-- Navigation -->
+    <string name="search">Search</string>
+    <string name="favorites">Favorites</string>
+    <string name="detail">Weather Detail</string>
+
+    <!-- Search Fragment -->
+    <string name="hint_enter_city">Enter city name</string>
+    <string name="get_weather_forecast">Get Weather Forecast</string>
+    <string name="save_to_favorites">Save to Favorites</string>
+    <string name="five_day_forecast">5-Day Forecast</string>
+    <string name="saved_to_favorites">★ Saved to Favorites</string>
+
+    <!-- Favorites Fragment -->
+    <string name="favorite_cities">Favorite Cities</string>
+    <string name="favorites_hint">Tap to view weather, long-press to remove</string>
+    <string name="no_favorites">No favorites</string>
+    <string name="no_favorites_message">No favorite cities yet.\nAdd cities from the Search tab.</string>
+
+    <!-- Detail Fragment -->
+    <string name="temperature">Temperature</string>
+    <string name="description">Description</string>
+
+    <!-- Errors -->
+    <string name="error_city_not_found">City not found. Please check the spelling.</string>
+    <string name="error_network">Network error. Please check your connection.</string>
+    <string name="error_generic">An error occurred. Please try again.</string>
+
+    <!-- General -->
+    <string name="loading">Loading…</string>
+    <string name="retry">Retry</string>
+    <string name="cancel">Cancel</string>
+    <string name="remove">Remove</string>
+    <string name="undo">Undo</string>
+</resources>

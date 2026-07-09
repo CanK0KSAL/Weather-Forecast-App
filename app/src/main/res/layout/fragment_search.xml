@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="?attr/colorSurface"
+    tools:context=".presentation.ui.search.SearchFragment">
+
+    <!-- City Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:hintEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_enter_city"
+            android:inputType="text"
+            android:imeOptions="actionSearch"
+            android:textSize="16sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Get Weather Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnGetWeather"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/get_weather_forecast"
+        android:layout_marginBottom="8dp"
+        app:icon="@android:drawable/ic_menu_search"
+        app:iconGravity="textStart" />
+
+    <!-- Save to Favorites Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSaveCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/save_to_favorites"
+        android:layout_marginBottom="16dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        app:icon="@android:drawable/btn_star_big_off"
+        app:iconGravity="textStart" />
+
+    <!-- City Name / Forecast Title -->
+    <TextView
+        android:id="@+id/txtCityName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/five_day_forecast"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorPrimary"
+        android:gravity="center"
+        android:padding="8dp"
+        android:visibility="gone"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Loading Indicator -->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Error Message -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="?attr/colorErrorContainer"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
+
+        <TextView
+            android:id="@+id/txtError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:textColor="?attr/colorOnErrorContainer"
+            android:textSize="14sp"
+            android:drawablePadding="8dp"
+            android:gravity="center"
+            tools:text="City not found" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Forecast List -->
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="8dp"
+        android:clipToPadding="false"
+        android:paddingTop="8dp" />
+
+</LinearLayout>
