@@ -17,6 +17,7 @@ Android weather application written in **Java**, using MVVM, LiveData, Repositor
 - Android SDK with `compileSdk` / `targetSdk` 35
 - Min SDK 24
 - An [OpenWeatherMap](https://openweathermap.org/api) API key
+  
 ## Setup
 
 1. Clone the repository and open it in Android Studio.
@@ -38,21 +39,24 @@ If the key is missing or empty, weather requests fail with a clear configuration
 
 **Security note:** Embedding an API key in a client APK (including via `BuildConfig`) is not absolute secret protection. The value can still be extracted from a built app. Prefer restricted keys, server-side proxies for production, and never commit real keys to Git. OkHttp debug logging redacts `appid` query parameters so credentials are not printed in Logcat.
 
+
 ## Build and test
 
-From the project root:
+From the project root (Linux/macOS):
 
 ```bash
+./gradlew assembleDebug
+./gradlew testDebugUnitTest
+```
+
+From the project root (Windows PowerShell):
+
+```powershell
 .\gradlew.bat assembleDebug
 .\gradlew.bat testDebugUnitTest
 ```
 
-On Windows (PowerShell or cmd):
 
-```bat
-gradlew.bat assembleDebug
-gradlew.bat testDebugUnitTest
-```
 
 Instrumented tests under `androidTest` require a device or emulator and are not covered by the unit-test command above.
 
@@ -121,6 +125,4 @@ JVM unit tests (`testDebugUnitTest`) cover device-free logic:
 
 Replace `YOUR_OPENWEATHERMAP_API_KEY` with a key from your own OpenWeatherMap account. Do not commit real keys.
 
-## License
 
-Educational project for an Android development (Java) course.
