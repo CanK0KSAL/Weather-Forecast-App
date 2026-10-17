@@ -12,12 +12,11 @@ Android weather application written in **Java**, using MVVM, LiveData, Repositor
 
 ## Requirements
 
-- Android Studio (Hedgehog or newer recommended)
-- JDK 11
+- Android Studio compatible with Android Gradle Plugin 8.10.0
+- JDK 17 or newer (required for the Android build toolchain)
 - Android SDK with `compileSdk` / `targetSdk` 35
 - Min SDK 24
 - An [OpenWeatherMap](https://openweathermap.org/api) API key
-
 ## Setup
 
 1. Clone the repository and open it in Android Studio.
@@ -44,8 +43,8 @@ If the key is missing or empty, weather requests fail with a clear configuration
 From the project root:
 
 ```bash
-./gradlew assembleDebug
-./gradlew testDebugUnitTest
+.\gradlew.bat assembleDebug
+.\gradlew.bat testDebugUnitTest
 ```
 
 On Windows (PowerShell or cmd):
